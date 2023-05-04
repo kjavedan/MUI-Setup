@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HelmetProvider } from "react-helmet-async";
+import { RouterProvider } from "react-router-dom";
+import ThemeProvider from "./theme";
+import router from "./routes";
+import { ThemeModeProvider } from "./context/ThemeContext";
+import { LanguageProvider } from "./context/LanguageContext";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HelmetProvider>
+      <ThemeModeProvider>
+        <LanguageProvider>
+          <ThemeProvider>
+            <RouterProvider router={router} />
+          </ThemeProvider>
+        </LanguageProvider>
+      </ThemeModeProvider>
+    </HelmetProvider>
   );
-}
+};
 
 export default App;
