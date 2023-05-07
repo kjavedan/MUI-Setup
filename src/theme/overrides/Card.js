@@ -5,6 +5,7 @@ export default function Card(theme) {
     MuiCard: {
       styleOverrides: {
         root: {
+          backgroundColor: theme.palette.grey[200],
           boxShadow: theme.customShadows.card,
           borderRadius: Number(theme.shape.borderRadius) * 2,
           position: "relative",

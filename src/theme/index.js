@@ -37,7 +37,7 @@ const ThemeProvider = ({ children }) => {
     const palette = isLightMode ? lightPalette : darkPalette;
     return {
       palette: palette,
-      typography: typography(currentLanguage),
+      typography: typography(currentLanguage, palette),
       shadows: shadows(palette),
       customShadows: customShadows(palette),
       shape: { borderRadius: 6 },

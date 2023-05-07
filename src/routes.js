@@ -6,10 +6,10 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 
 //PAGES
-import Login from "./pages/Authentication/Login";
 import Page404 from "./pages/Page404";
 import Home from "./pages/Home";
-import Register from "./pages/Authentication/Register";
+import LoginPage from "./pages/Authentication/LoginPage";
+import SignupPage from "./pages/Authentication/SignupPage";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
         element: <Navigate to="/login" />,
         index: true,
       },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
+      { path: "login", element: <LoginPage /> },
+      { path: "signup", element: <SignupPage /> },
       { path: "home", element: <Home /> },
     ],
   },

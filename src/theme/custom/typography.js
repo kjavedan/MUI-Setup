@@ -26,7 +26,7 @@ const FONT_PRIMARY = {
   English: "'Poppins, sans-serif",
 };
 
-const typography = (language) => ({
+const typography = (language, palette) => ({
   fontFamil: FONT_PRIMARY[language],
   fontWeightRegular: 400,
   fontWeightMedium: 600,
@@ -35,18 +35,23 @@ const typography = (language) => ({
     fontWeight: 800,
     lineHeight: 80 / 64,
     fontSize: pxToRem(40),
+    color: palette.primary.main,
     ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+
   },
   h2: {
     fontWeight: 800,
     lineHeight: 64 / 48,
     fontSize: pxToRem(32),
+    color: palette.text.primary,
     ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
   },
   h3: {
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: pxToRem(24),
+    textTransform: 'capitalize',
+    color: palette.text.primary,
     ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
   },
   h4: {
@@ -71,6 +76,7 @@ const typography = (language) => ({
     fontWeight: 600,
     lineHeight: 1.5,
     fontSize: pxToRem(16),
+    color: palette.text.secondary,
   },
   subtitle2: {
     fontWeight: 600,
@@ -80,6 +86,7 @@ const typography = (language) => ({
   body1: {
     lineHeight: 1.5,
     fontSize: pxToRem(16),
+    color: palette.text.secondary
   },
   body2: {
     lineHeight: 22 / 14,
@@ -88,6 +95,7 @@ const typography = (language) => ({
   caption: {
     lineHeight: 1.5,
     fontSize: pxToRem(12),
+    color: palette.grey[400]
   },
   overline: {
     fontWeight: 700,

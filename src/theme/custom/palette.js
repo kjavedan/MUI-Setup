@@ -4,24 +4,23 @@ import { alpha } from "@mui/material/styles";
 //SETUP COLORS
 //LIGHT
 const GREY_LIGHT = {
-  0: "#FFFFFF",
-  100: "#F9FAFB",
-  200: "#F4F6F8",
-  300: "#DFE3E8",
-  400: "#C4CDD5",
-  500: "#919EAB",
-  600: "#637381",
+  100: "#F3F5F9",
+  200: "#EFEFEF",
+  300: "#C7C7C7",
+  400: "#B8B8B8",
+  500: "#A6A5A5",
+  600: "#727272",
   700: "#454F5B",
-  800: "#212B36",
-  900: "#161C24",
+  800: "#36363E",
+  900: "#202028",
 };
 
 const PRIMARY_LIGHT = {
-  lighter: "#D1E9FC",
-  light: "#76B0F1",
-  main: "#2065D1",
-  dark: "#103996",
-  darker: "#061B64",
+  lighter: "#C9B6EE",
+  light: "#A57EDC",
+  main: "#7D56DA",
+  dark: "#5A3F96",
+  darker: "#372A53",
   contrastText: "#fff",
 };
 
@@ -81,13 +80,13 @@ const lightPalette = {
   grey: GREY_LIGHT,
   divider: alpha(GREY_LIGHT[500], 0.25),
   text: {
-    primary: GREY_LIGHT[800],
+    primary: GREY_LIGHT[900],
     secondary: GREY_LIGHT[600],
     disabled: GREY_LIGHT[500],
   },
   background: {
     paper: "#fff",
-    default: GREY_LIGHT[100],
+    default: "#fff",
     neutral: GREY_LIGHT[200],
   },
   action: {
@@ -104,23 +103,23 @@ const lightPalette = {
 
 //DARK
 const GREY_DARK = {
-  100: "#F9FAFB",
-  200: "#F4F6F8",
-  300: "#DFE3E8",
-  400: "#C4CDD5",
-  500: "#919EAB",
-  600: "#637381",
+  100: "#F3F5F9",
+  200: "#454F5B",
+  300: "#C7C7C7",
+  400: "#B8B8B8",
+  500: "#A6A5A5",
+  600: "#7A7A7A",
   700: "#454F5B",
-  800: "#212B36",
-  900: "#161C24",
+  800: "#36363E",
+  900: "#202028",
 };
 
 const PRIMARY_DARK = {
-  lighter: "#5472D3",
-  light: "#2F4B98",
-  main: "#1E3A8A",
-  dark: "#162E63",
-  darker: "#101D42",
+  lighter: "#C9B6EE",
+  light: "#A57EDC",
+  main: "#7D56DA",
+  dark: "#5A3F96",
+  darker: "#372A53",
   contrastText: "#fff",
 };
 
@@ -187,7 +186,7 @@ const darkPalette = {
   },
   background: {
     paper: GREY_DARK[800],
-    default: GREY_DARK[900],
+    default: "#181820",
     neutral: GREY_DARK[700],
   },
   action: {
