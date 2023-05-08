@@ -5,7 +5,7 @@ import { alpha } from "@mui/material/styles";
 //LIGHT
 const GREY_LIGHT = {
   100: "#F3F5F9",
-  200: "#EFEFEF",
+  200: "#EBEBEB",
   300: "#C7C7C7",
   400: "#B8B8B8",
   500: "#A6A5A5",

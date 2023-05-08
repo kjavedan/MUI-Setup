@@ -11,7 +11,7 @@ import moneyImg from "../../assets/images/money.png";
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled("div")(({ theme }) => ({
-  border: "solid",
+  // border: "solid",
   [theme.breakpoints.up("md")]: {
     display: "flex",
   },
@@ -79,7 +79,7 @@ export default function LoginPage() {
           </StyledTitle>
 
           <StyledContent>
-            <Typography variant="h3" mb={5} gutterBottom>
+            <Typography variant="h2" mb={5} gutterBottom>
               {language[currentLanguage].login}
             </Typography>
             <LoginForm />

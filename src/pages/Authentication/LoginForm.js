@@ -1,5 +1,7 @@
+//REACT
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+//@MUI
 import {
   Link,
   Stack,
@@ -10,12 +12,19 @@ import {
   Button,
   Box,
   Typography,
+  FormControl,
 } from "@mui/material";
-// import Authenticate from '../services/authService';
+//CONTEXTS
 import language from "../../data/language";
 import { LanguageContext } from "../../context/LanguageContext";
+//ICONS
 import { Eye, EyeSlash } from "iconsax-react";
+//VALIDATOR
+import validator from "validator";
+//COMPONENTS
+import { StyledHelperText } from "./SignupForm";
 
+//-------------------------------------------------------------------------------------------------------------
 export default function LoginForm() {
   //NAVIGATION
   const navigate = useNavigate();
@@ -23,34 +32,91 @@ export default function LoginForm() {
   const { currentLanguage } = useContext(LanguageContext);
   //STATES
   const [showPassword, setShowPassword] = useState(false);
+
+  const [errors, setErrors] = useState({});
+
+  const [values, setValues] = useState({
+    username: "",
+    password: "",
+  });
+
+  console.log(values);
+
+  //OBJCTS
+  const { username, password } = values;
+
   //FUNCS
   const handleSubmit = (e) => {
     e.preventDefault();
+    const error = validateFiledNames();
+    setErrors(error);
+  };
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const validateFiledNames = () => {
+    const error = {};
+    if (validator.isEmpty(username) || validator.isEmpty(password)) {
+      error.username = "fillAllFields";
+      return error;
+    }
+    if (validator.matches(username, /[^a-zA-Z0-9]/g)) {
+      error.username = "usernameSpecialChar";
+    }
+    if (!validator.isStrongPassword(password)) {
+      error.password = "passNotStrong";
+      return error;
+    }
+    return error;
   };
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <Stack spacing={3}>
-        <TextField id="username" name="username" label="User Name" />
+        {/* USERNAME */}
+        <FormControl>
+          <Typography variant="h6">Username</Typography>
+          <TextField
+            id="username"
+            name="username"
+            value={username}
+            error={errors.username ? true : false}
+            onChange={(e) => handleChange(e)}
+          />
+          <StyledHelperText>
+            {language[currentLanguage][errors.username]}
+          </StyledHelperText>
+        </FormControl>
 
-        <TextField
-          id="password"
-          name="password"
-          label="Password"
-          type={showPassword ? "text" : "password"}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  onClick={() => setShowPassword(!showPassword)}
-                  edge="end"
-                >
-                  {showPassword ? <Eye /> : <EyeSlash />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
+        {/* PASSWORD */}
+        <FormControl>
+          <Typography variant="h6">password</Typography>
+          <TextField
+            id="password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            error={errors.password ? true : false}
+            onChange={(e) => handleChange(e)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={() => setShowPassword(!showPassword)}
+                    edge="end"
+                  >
+                    {showPassword ? <Eye /> : <EyeSlash />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+          <StyledHelperText>
+            {language[currentLanguage][errors.password]}
+          </StyledHelperText>
+        </FormControl>
       </Stack>
       <Stack
         direction="row"

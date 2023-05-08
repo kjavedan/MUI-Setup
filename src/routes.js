@@ -10,11 +10,32 @@ import Page404 from "./pages/Page404";
 import Home from "./pages/Home";
 import LoginPage from "./pages/Authentication/LoginPage";
 import SignupPage from "./pages/Authentication/SignupPage";
+import SimpleLayout from "./layouts/SimpleLayout";
+import Activity from "./pages/Activity";
+import Recharge from "./pages/Recharge";
+import Withdraw from "./pages/Withdraw";
+import Account from "./pages/Account";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/app",
     element: <MainLayout />,
+    errorElement: <Page404 />,
+    children: [
+      {
+        element: <Navigate to="/app/home" />,
+        index: true,
+      },
+      { path: "home", element: <Home /> },
+      { path: "activity", element: <Activity /> },
+      { path: "recharge", element: <Recharge /> },
+      { path: "withdraw", element: <Withdraw /> },
+      { path: "account", element: <Account /> },
+    ],
+  },
+  {
+    path: "/",
+    element: <SimpleLayout />,
     errorElement: <Page404 />,
     children: [
       {
@@ -23,7 +44,6 @@ const router = createBrowserRouter([
       },
       { path: "login", element: <LoginPage /> },
       { path: "signup", element: <SignupPage /> },
-      { path: "home", element: <Home /> },
     ],
   },
   {

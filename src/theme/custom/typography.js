@@ -36,11 +36,13 @@ const typography = (language, palette) => ({
     lineHeight: 80 / 64,
     fontSize: pxToRem(40),
     color: palette.primary.main,
+    textTransform: "capitalize",
     ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
-
+    
   },
   h2: {
     fontWeight: 800,
+    textTransform: "capitalize",
     lineHeight: 64 / 48,
     fontSize: pxToRem(32),
     color: palette.text.primary,
@@ -70,6 +72,8 @@ const typography = (language, palette) => ({
     fontWeight: 700,
     lineHeight: 28 / 18,
     fontSize: pxToRem(17),
+    textTransform: 'capitalize',
+    color: palette.text.primary,
     ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
   },
   subtitle1: {

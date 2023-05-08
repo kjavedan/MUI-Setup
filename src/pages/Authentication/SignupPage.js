@@ -1,17 +1,21 @@
+//REACT
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 // @mui
 import { styled } from "@mui/material/styles";
 import { Container, Stack, Typography } from "@mui/material";
-
-import { useContext } from "react";
+//DATA
 import language from "../../data/language";
+//CONTEXTS
 import { LanguageContext } from "../../context/LanguageContext";
+//ASSETS
 import moneyImg from "../../assets/images/money.png";
+//COMPONENTS
 import SignupForm from "./SignupForm";
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled("div")(({ theme }) => ({
-  border: "solid",
+  // border: "solid",
   [theme.breakpoints.up("md")]: {
     display: "flex",
   },
@@ -25,7 +29,7 @@ const StyledContent = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   flexDirection: "column",
-  paddingBottom: theme.spacing(12, 0),
+  paddingBottom: theme.spacing(20),
   [theme.breakpoints.down("lg")]: {
     minHeight: "unset",
   },
@@ -79,7 +83,7 @@ export default function SignupPage() {
           </StyledTitle>
 
           <StyledContent>
-            <Typography variant="h3" my={5} gutterBottom>
+            <Typography variant="h2" my={5} gutterBottom>
               {language[currentLanguage].signup}
             </Typography>
             <SignupForm />

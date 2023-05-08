@@ -89,7 +89,7 @@ export default function SignupForm() {
             id="username"
             name="username"
             value={username}
-            error={errors.username ? errors.username : ""}
+            error={errors.username  ? true : false}
             onChange={(e) => handleChange(e)}
           />
           <StyledHelperText>
@@ -103,7 +103,7 @@ export default function SignupForm() {
             id="username"
             name="email"
             value={email}
-            error={errors.email ? errors.email : ""}
+            error={errors.email  ? true : false}
             onChange={(e) => handleChange(e)}
           />
           <StyledHelperText>
@@ -117,7 +117,7 @@ export default function SignupForm() {
             id="username"
             name="invitationCode"
             value={invitationCode}
-            error={errors.invitationCode ? errors.invitationCode : ""}
+            error={errors.invitationCode  ? true : false}
             onChange={(e) => handleChange(e)}
           />
           <StyledHelperText>
@@ -132,7 +132,7 @@ export default function SignupForm() {
             name="password"
             type={showPassword ? "text" : "password"}
             value={password}
-            error={errors.password ? errors.password : ""}
+            error={errors.password  ? true : false}
             onChange={(e) => handleChange(e)}
             InputProps={{
               endAdornment: (
@@ -159,7 +159,7 @@ export default function SignupForm() {
             name="confirmPassword"
             type={showPassword ? "text" : "password"}
             value={confirmPassword}
-            error={errors.confirmPassword ? errors.confirmPassword : ""}
+            error={errors.confirmPassword ?   true : false}
             onChange={(e) => handleChange(e)}
             InputProps={{
               endAdornment: (
@@ -193,6 +193,8 @@ export default function SignupForm() {
   );
 }
 
-const StyledHelperText = styled(FormHelperText)(() => ({
+export const StyledHelperText = styled(FormHelperText)(() => ({
   color: "red",
+  marginLeft: "unset",
+  textTransform: 'capitalize'
 }));
