@@ -77,13 +77,13 @@ export default function SignupPage() {
         </StyledImage>
         <Container maxWidth="sm">
           <StyledTitle>
-            <Typography variant="h1" mb={5} gutterBottom>
+            {/* <Typography variant="h1" mb={5} gutterBottom>
               {language[currentLanguage].bomeiPlay}
-            </Typography>
+            </Typography> */}
           </StyledTitle>
 
           <StyledContent>
-            <Typography variant="h2" my={5} gutterBottom>
+            <Typography variant="h2" mb={5} gutterBottom>
               {language[currentLanguage].signup}
             </Typography>
             <SignupForm />

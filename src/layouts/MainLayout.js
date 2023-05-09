@@ -35,12 +35,12 @@ const Main = styled("div")(({ theme }) => ({
   overflow: "auto",
   minHeight: "99vh",
   position: "relative",
-  padding: theme.spacing(8, 2),
+  padding: theme.spacing(10, 2),
   overflowX: "hidden",
 
   [theme.breakpoints.up("lg")]: {
     width: "calc(100vw - 280px)",
     float: "right",
-    padding: theme.spacing(8, 5),
+    padding: theme.spacing(12, 5),
   },
 }));

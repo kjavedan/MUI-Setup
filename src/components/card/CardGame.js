@@ -9,10 +9,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import gameImg from "../../assets/images/gameImg.png";
-const CardGame = () => {
+const CardGame = ({ img }) => {
   return (
     <StyledGameCard>
-      <CardMedia sx={{ height: 115 }} image={gameImg} />
+      <CardMedia sx={{ height: 115 }} image={img} />
       <StyledCardActionArea>
         <Typography variant="subtitle2">Arcade game</Typography>
         <Typography variant="body2">
@@ -26,8 +26,7 @@ const CardGame = () => {
 export default CardGame;
 
 const StyledGameCard = styled(Card)(({ theme }) => ({
-  minWidth: 250,
-  
+  minWidth: 200,
   [theme.breakpoints.up("lg")]: {
     minWidth: "unset",
   },
@@ -35,9 +34,5 @@ const StyledGameCard = styled(Card)(({ theme }) => ({
 const StyledCardActionArea = styled(CardActionArea)(({ theme }) => ({
   padding: theme.spacing(1, 2),
   borderRadius: "unset",
-  backgroundColor: alpha(theme.palette.grey[900], 4),
-  color: theme.palette.grey[400],
-  ".&:hover": {
-    backgroundColor: alpha(theme.palette.grey[900], 4),
-  },
+  backgroundColor: theme.palette.grey[200],
 }));

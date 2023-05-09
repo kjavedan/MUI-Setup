@@ -73,9 +73,9 @@ export default function LoginPage() {
         </StyledImage>
         <Container maxWidth="sm">
           <StyledTitle>
-            <Typography variant="h1" mb={10} gutterBottom>
+            {/* <Typography variant="h1" mb={10} gutterBottom>
               {language[currentLanguage].bomeiPlay}
-            </Typography>
+            </Typography> */}
           </StyledTitle>
 
           <StyledContent>

@@ -27,11 +27,11 @@ const CardActivity = () => {
       />
       <Stack>
         <Typography variant="subtitle2">Someone fall in trap</Typography>
-        <Typography variant="body1">Won $129, 5:32PM January 29</Typography>
+        <Typography variant="body2">Won $129, 5:32PM January 29</Typography>
       </Stack>
       <Stack mt={1}>
         <Typography variant="subtitle2">Someone fall in trap</Typography>
-        <Typography variant="body1">Won $129, 5:32PM January 29</Typography>
+        <Typography variant="body2">Won $129, 5:32PM January 29</Typography>
       </Stack>
       <CardContent></CardContent>
     </StyledCard>

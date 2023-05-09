@@ -3,6 +3,9 @@ import { Box, Grid } from "@mui/material";
 import React from "react";
 import useResponsive from "../../hooks/useResponsive";
 import CardGame from "../../components/card/CardGame";
+import cover_1 from "../../assets/images/cover_1.jpg";
+import cover_2 from "../../assets/images/cover_2.jpg";
+import cover_3 from "../../assets/images/cover_3.jpg";
 const Games = () => {
   //HOOKS
   const isDesktop = useResponsive("up", "lg");
@@ -12,20 +15,20 @@ const Games = () => {
       {isDesktop ? (
         <GamesDesktop container>
           <StyledGridItem item lg={12}>
-            <CardGame />
+            <CardGame img={cover_1} />
           </StyledGridItem>
           <StyledGridItem item lg={6}>
-            <CardGame />
+            <CardGame img={cover_2} />
           </StyledGridItem>
           <StyledGridItem item lg={6}>
-            <CardGame />
+            <CardGame img={cover_3} />
           </StyledGridItem>
         </GamesDesktop>
       ) : (
         <GamesMobile>
-          <CardGame />
-          <CardGame />
-          <CardGame />
+          <CardGame img={cover_1} />
+          <CardGame img={cover_2} />
+          <CardGame img={cover_3} />
         </GamesMobile>
       )}
     </>
@@ -41,6 +44,8 @@ const GamesMobile = styled(Box)(({ theme }) => ({
   width: "100vw",
   overflowX: "scroll",
   gap: 10,
+  paddingRight: theme.spacing(4.5),
+  paddingBottom: theme.spacing(3),
 }));
 
 const GamesDesktop = styled(Grid)(({ theme }) => ({

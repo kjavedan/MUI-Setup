@@ -17,31 +17,33 @@ const Home = () => {
         {!isDesktop ? (
           <>
             <StyledGridItem item xs={12} lg={5}>
-              <Typography variant="h3">info</Typography>
+              <Typography variant="h4">info</Typography>
               <CardProfile />
             </StyledGridItem>
             <StyledGridItem item xs={12} lg={7}>
-              <Typography variant="h3">Games</Typography>
+              <Typography variant="h4">Games</Typography>
               <Games />
             </StyledGridItem>
           </>
         ) : (
           <>
-            <StyledGridItem item xs={12} lg={8}>
-              <Typography variant="h3">Games</Typography>
+            <StyledGridItem item xs={12} lg={7.6}>
+              <Typography variant="h4">Games</Typography>
               <Games />
             </StyledGridItem>
-            <StyledGridItem item xs={12} lg={4}>
-              <Typography variant="h3">info</Typography>
+            <StyledGridItem item xs={12} lg={4.3}>
+              <Typography variant="h4">info</Typography>
               <CardProfile />
             </StyledGridItem>
           </>
         )}
 
         <StyledGridItem item xs={12} lg={7}>
+        <Typography variant="h4">Activity</Typography>
           <CardActivity />
         </StyledGridItem>
         <StyledGridItem item xs={12} lg={5}>
+        <Typography variant="h4">Recharge</Typography>
           <CardRecharge />
         </StyledGridItem>
       </Grid>

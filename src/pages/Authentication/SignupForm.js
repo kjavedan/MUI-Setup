@@ -84,7 +84,7 @@ export default function SignupForm() {
       <Stack spacing={3} mb={5}>
         {/* USERNAME */}
         <FormControl>
-          <Typography variant="h6">Username</Typography>
+          <Typography variant="subtitle1">Username</Typography>
           <TextField
             id="username"
             name="username"
@@ -98,7 +98,7 @@ export default function SignupForm() {
         </FormControl>
         {/* EMAIL */}
         <FormControl>
-          <Typography variant="h6">Email</Typography>
+          <Typography variant="subtitle1">Email</Typography>
           <TextField
             id="username"
             name="email"
@@ -112,7 +112,7 @@ export default function SignupForm() {
         </FormControl>
         {/* INVITATION CODE */}
         <FormControl>
-          <Typography variant="h6">invitation code</Typography>
+          <Typography variant="subtitle1">invitation code</Typography>
           <TextField
             id="username"
             name="invitationCode"
@@ -126,7 +126,7 @@ export default function SignupForm() {
         </FormControl>
         {/* PASSWORD */}
         <FormControl>
-          <Typography variant="h6">password</Typography>
+          <Typography variant="subtitle1">password</Typography>
           <TextField
             id="password"
             name="password"
@@ -153,7 +153,7 @@ export default function SignupForm() {
         </FormControl>
         {/*CONFIRM PASSWORD */}
         <FormControl>
-          <Typography variant="h6">confirm password</Typography>
+          <Typography variant="subtitle1">confirm password</Typography>
           <TextField
             id="password"
             name="confirmPassword"

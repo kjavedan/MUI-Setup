@@ -12,7 +12,7 @@ const PageTitle = ({ value }) => {
   const isDesktop = useResponsive("up", "lg");
 
   return (
-    <Typography variant="h3" textAlign={isDesktop ? "left" : "center"}>
+    <Typography variant="h3" mb={6} textAlign={isDesktop ? "left" : "center"}>
       {language[currentLanguage][value]}
     </Typography>
   );

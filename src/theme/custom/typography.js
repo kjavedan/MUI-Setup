@@ -80,7 +80,7 @@ const typography = (language, palette) => ({
     fontWeight: 600,
     lineHeight: 1.5,
     fontSize: pxToRem(16),
-    color: palette.text.secondary,
+    color: palette.text.primary,
   },
   subtitle2: {
     fontWeight: 600,
@@ -90,7 +90,7 @@ const typography = (language, palette) => ({
   body1: {
     lineHeight: 1.5,
     fontSize: pxToRem(16),
-    color: palette.text.secondary
+    color: palette.text.primary
   },
   body2: {
     lineHeight: 22 / 14,

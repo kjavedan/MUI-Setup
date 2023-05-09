@@ -13,12 +13,13 @@ import {
   Typography,
 } from "@mui/material";
 
-import { ArrowLeft3, Home } from "iconsax-react";
+import { ArrowLeft3, Home, Moon, Sun1 } from "iconsax-react";
 //ASSETS
 import avatar from "../../assets/images/avatar.png";
 import chinaFlag from "../../assets/images/chinaFlag.png";
 import britishFlag from "../../assets/images/britishFlag.png";
 import useResponsive from "../../hooks/useResponsive";
+import { ThemeContext } from "../../context/ThemeContext";
 //----------------------------------------------------------
 
 const Header = () => {
@@ -27,6 +28,7 @@ const Header = () => {
   const location = useLocation();
   //CONTEXT
   const { currentLanguage, handleLanguageToggle } = useContext(LanguageContext);
+  const { isLightMode, toggleThemeMode } = useContext(ThemeContext);
 
   //REF
   const lastScrollPos = useRef(0);
@@ -73,27 +75,25 @@ const Header = () => {
           >
             {location.pathname === "/app/home" ? <Home /> : <ArrowLeft3 />}
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            {location.pathname === "/app/home" ? "" : "back"}
-          </Typography>
-          <CardHeader
-            sx={{ direction: "rtl", p: 0 }}
-            avatar={
-              <Avatar
-                alt="profile"
-                src={avatar}
-                sx={{ width: 30, height: 30, ml: 1 }}
-              />
-            }
-            title={"Khaled"}
-          />
 
           <Avatar
-            sx={{ width: 30, height: 30 }}
+            sx={{ width: 30, height: 30, ml: "auto", mr: 1 }}
+            alt="avatar"
+            src={avatar}
+            onClick={() => navigate("/app/account")}
+          />
+          <Avatar
+            sx={{ width: 30, height: 30, mr: 1 }}
             alt="flag"
             src={currentLanguage === "en" ? britishFlag : chinaFlag}
             onClick={handleLanguageToggle}
           />
+          <Avatar
+            sx={{ width: 35, height: 35, bgcolor: "#EBEBEB", color: "#000" }}
+            onClick={toggleThemeMode}
+          >
+            {isLightMode ? <Sun1 /> : <Moon />}
+          </Avatar>
         </Toolbar>
       </StyledAppBar>
     </Box>

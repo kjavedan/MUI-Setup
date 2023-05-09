@@ -18,12 +18,12 @@ export const StyledSidebarContent = styled(Box)(({ theme }) => ({
 export const StyledNavItem = styled((props) => (
   <ListItemButton disableGutters {...props} />
 ))(({ theme }) => ({
-  ...theme.typography.subtitle2,
+  ...theme.typography.body1,
   height: 48,
   padding: "1em",
   position: "relative",
   textTransform: "capitalize",
-  color: theme.palette.grey[600],
+  color: theme.palette.grey[700],
   borderRadius: theme.shape.borderRadius * 2,
   borderTopRightRadius: 0,
   borderBottomRightRadius: 0,

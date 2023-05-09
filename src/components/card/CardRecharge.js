@@ -32,7 +32,7 @@ const CardRecharge = () => {
         <Avatar src={cointImg} alt="coin" sx={{mr: 1}}/>
         <Box >
           <Typography variant="subtitle2">Special Offer</Typography>
-          <Typography variant="body1">500 Coins with $400</Typography>
+          <Typography variant="body2">500 Coins with $400</Typography>
         </Box>
       </Stack>
       <CardContent></CardContent>

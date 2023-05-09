@@ -9,7 +9,7 @@ const GREY_LIGHT = {
   300: "#C7C7C7",
   400: "#B8B8B8",
   500: "#A6A5A5",
-  600: "#727272",
+  600: "#2e2e2e",
   700: "#454F5B",
   800: "#36363E",
   900: "#202028",
@@ -104,7 +104,7 @@ const lightPalette = {
 //DARK
 const GREY_DARK = {
   100: "#F3F5F9",
-  200: "#454F5B",
+  200: "#36363E",
   300: "#C7C7C7",
   400: "#B8B8B8",
   500: "#A6A5A5",
@@ -180,7 +180,7 @@ const darkPalette = {
   divider: alpha(GREY_DARK[500], 0.25),
 
   text: {
-    primary: GREY_DARK[100],
+    primary: "#F5F5F5",
     secondary: GREY_DARK[300],
     disabled: GREY_DARK[500],
   },
